@@ -21,5 +21,31 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./views/Login.vue'),
+    },
+    {
+      path: '/dashboard',
+      component: () => import('./views/Dashboard.vue'),
+      children: [
+        {
+          path: '/',
+          name: 'dashboard',
+          component: () => import('./components/Dashboard.vue'),
+        },
+        {
+          path: 'profile',
+          name: 'profile',
+          component: () => import('./components/Profile.vue'),
+        },
+        {
+          path: 'channel',
+          name: 'channel',
+          component: () => import('./components/Channel.vue'),
+        },
+      ],
+    },
   ],
 });
