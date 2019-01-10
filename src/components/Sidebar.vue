@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer class="mt-5" style="width: 300px" app clipped disable-route-watcher>
+  <v-navigation-drawer v-model="visible" class="mt-5" style="width: 300px" app clipped>
     <v-list>
       <v-list-tile
         v-for="section in sections"
@@ -20,10 +20,23 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
+  computed: {
+    visible: {
+      get() {
+        return this.$store.state.sidebar.visible;
+      },
+      set(visible) {
+        if (visible !== this.$store.state.sidebar.visible) {
+          this.$store.dispatch('sidebar/toggleSidebar')
+        }
+      },
+    },
+  },
   data() {
     return {
-      drawer: true,
       sections: [
         {
           title: 'Dashboard',
@@ -43,6 +56,11 @@ export default {
       ],
     };
   },
+  methods: {
+    ...mapActions('sidebar', [
+      'toggleSidebar',
+    ])
+  }
 };
 </script>
 
