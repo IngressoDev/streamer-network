@@ -1,9 +1,17 @@
 <template>
-  <div>test</div>
+  <div style="position: relative;">
+    <vue-draggable-resizable :draggable="true" :resizable="true">test</vue-draggable-resizable>
+  </div>
 </template>
 
 <script>
-export default {};
+import VueDraggableResizable from 'vue-draggable-resizable';
+
+export default {
+  components: {
+    VueDraggableResizable,
+  },
+};
 </script>
 
 <style scoped>

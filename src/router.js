@@ -14,18 +14,11 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
-    },
-    {
       path: '/login',
       name: 'login',
       component: () => import('./views/Login.vue'),
     },
+    // Dashboard routes
     {
       path: '/dashboard',
       component: () => import('./views/Dashboard.vue'),
@@ -45,7 +38,23 @@ export default new Router({
           name: 'channel',
           component: () => import('./components/Channel.vue'),
         },
+        {
+          path: 'overlays',
+          name: 'overlays',
+          component: () => import('./views/Overlays.vue'),
+        },
       ],
+    },
+    // Overlay routes
+    {
+      path: '/overlay/:id',
+      name: 'overlay',
+      component: () => import('./views/Overlay.vue'),
+    },
+    {
+      path: '/overlay/:id/edit',
+      name: 'overlay_edit',
+      component: () => import('./views/OverlayEditor.vue'),
     },
   ],
 });

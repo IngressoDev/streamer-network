@@ -9,7 +9,10 @@
     <v-menu offset-y>
       <v-btn slot="activator" dark icon>
         <v-avatar size="32">
-          <img src="https://vuetifyjs.com/apple-touch-icon-180x180.png" alt="avatar">
+          <img
+            src="https://static-cdn.jtvnw.net/jtv_user_pictures/ec270cfa-bc51-4da6-b241-3bff91e7a3be-profile_image-300x300.png"
+            alt="avatar"
+          >
         </v-avatar>
       </v-btn>
       <v-list>

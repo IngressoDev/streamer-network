@@ -30,7 +30,7 @@ export default {
       },
       set(visible) {
         if (visible !== this.$store.state.sidebar.visible) {
-          this.$store.dispatch('sidebar/toggleSidebar')
+          this.$store.dispatch('sidebar/toggleSidebar');
         }
       },
     },
@@ -53,14 +53,17 @@ export default {
           icon: 'view_stream',
           href: 'channel',
         },
+        {
+          title: 'Overlays',
+          icon: 'widgets',
+          href: 'overlays',
+        },
       ],
     };
   },
   methods: {
-    ...mapActions('sidebar', [
-      'toggleSidebar',
-    ])
-  }
+    ...mapActions('sidebar', ['toggleSidebar']),
+  },
 };
 </script>
 
