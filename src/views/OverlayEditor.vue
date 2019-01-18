@@ -168,8 +168,8 @@
 
 <script>
 import Draggable from 'vuedraggable';
-import Image from '../components/Image.vue';
-import Text1 from '../components/Text.vue';
+import ImageComponent from '../components/Image.vue';
+import TextComponent from '../components/Text.vue';
 
 export default {
   components: {
@@ -187,7 +187,7 @@ export default {
       this.cElements.push({
         id: this.cElements.length,
         name: 'test' + this.cElements.length,
-        class: Image,
+        class: ImageComponent,
         props: { img: 'https://picsum.photos/510/300/?image=200', opacity: 100, zIndex: this.cElements.length },
       });
       this.zElements.unshift({ id: this.zElements.length, name: 'test' + this.zElements.length });
@@ -196,7 +196,7 @@ export default {
       this.cElements.push({
         id: this.cElements.length,
         name: 'test' + this.cElements.length,
-        class: Text1,
+        class: TextComponent,
         props: { message: 'Test', opacity: 100, zIndex: this.cElements.length },
       });
       this.zElements.unshift({ id: this.zElements.length, name: 'test' + this.zElements.length });
